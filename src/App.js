@@ -120,8 +120,8 @@ function App() {
     return numArray
   }
 
-  function newGame() {
-    if (isRunning) {
+  function newGame(e) {
+    if (e.target.textContent === 'New game') {
       setDiceNum(allNewDice())
       setTenzies(newtenzies())
       setRollTimes(15)
@@ -129,6 +129,16 @@ function App() {
         const stopwatchOffset = new Date()
         stopwatchOffset.setSeconds(stopwatchOffset.getSeconds())
       }, false)
+    } else {
+      if (isRunning) {
+        setDiceNum(allNewDice())
+        setTenzies(newtenzies())
+        setRollTimes(15)
+        reset(() => {
+          const stopwatchOffset = new Date()
+          stopwatchOffset.setSeconds(stopwatchOffset.getSeconds())
+        }, false)
+      }
     }
   }
 
@@ -143,7 +153,7 @@ function App() {
         setRollTimes(prev => prev - 1)
       }
     } else {
-      newGame()
+      newGame(e)
     }
   }
 
