@@ -1,0 +1,122 @@
+.main {
+  width: 450px;
+  height: 450px;
+  border-radius: 20px;
+  background-color: rgb(172, 212, 179);
+  margin: 100px auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.container {
+  display: grid;
+  grid-template: auto auto / repeat(5, 1fr);
+  gap: 20px;
+}
+.die-box {
+  width: 55px;
+  height: 55px;
+  border-radius: 15px;
+  box-shadow: 2px 2px 2px 2px rgb(5, 153, 238);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+.icons {
+  width: 50px;
+  height: 50px;
+}
+.btn-roll {
+  position: absolute;
+  bottom: 50px;
+  width: 110px;
+  height: 50px;
+  border: none;
+  border-radius: 10px;
+  background-color: rgb(11, 87, 80);
+  color: rgb(164, 187, 168);
+  cursor: pointer;
+  font-weight: 900;
+}
+.btn-roll:hover {
+  background-color: rgb(5, 40, 80);
+}
+.btn-roll:active {
+  background-color: rgb(11, 87, 80);
+  box-shadow: 2px 2px 2px 2px rgb(6, 48, 104);
+  transform: translateY(2.5px);
+  transition: 1ms;
+}
+.win-label {
+  position: absolute;
+  bottom: 110px;
+  font-size: 20px;
+}
+.game-intro {
+  position: absolute;
+  text-align: center;
+  top: 10px;
+  padding-inline: 45px;
+}
+.game-record {
+  width: 140px;
+  height: auto;
+  position: absolute;
+  font-size: 12px;
+  bottom: 20px;
+  right: 0px;
+}
+.btn-reset {
+  margin-top: 10px;
+  width: 110px;
+  height: 50px;
+  border: none;
+  border-radius: 10px;
+  background-color: rgb(4, 109, 95);
+  color: rgb(164, 187, 168);
+  cursor: pointer;
+  font-weight: 900;
+}
+.btn-reset:hover {
+  background-color: rgb(40, 5, 80);
+}
+.btn-reset:active {
+  background-color: rgb(15, 158, 144);
+  box-shadow: 2px 2px 2px 2px rgb(129, 18, 105);
+  transform: translateY(2.5px);
+  transition: 1ms;
+}
+.playing-inf {
+  display: inline-block;
+  font-size: 12px;
+  padding-left: -10px;
+}
+.game-timeline{
+  width: 120px;
+  height: auto;
+  position: absolute;
+  bottom: 20px;
+  left: 30px;
+}
+.btn-stop {
+  margin-top: 10px;
+  width: 110px;
+  height: 50px;
+  border: none;
+  border-radius: 10px;
+  background-color: rgb(12, 54, 116);
+  color: rgb(164, 187, 168);
+  cursor: pointer;
+  font-weight: 900;
+}
+.btn-stop:hover {
+  background-color: rgb(134, 18, 100);
+}
+.btn-stop:active {
+  background-color: rgb(9, 104, 121);
+  box-shadow: 2px 2px 2px 2px rgb(131, 10, 10);
+  transform: translateY(2.5px);
+  transition: 1ms;
+}
