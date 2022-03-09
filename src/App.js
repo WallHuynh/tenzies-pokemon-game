@@ -121,13 +121,15 @@ function App() {
   }
 
   function newGame() {
-    setDiceNum(allNewDice())
-    setTenzies(newtenzies())
-    setRollTimes(15)
-    reset(() => {
-      const stopwatchOffset = new Date()
-      stopwatchOffset.setSeconds(stopwatchOffset.getSeconds())
-    }, false)
+    if (isRunning) {
+      setDiceNum(allNewDice())
+      setTenzies(newtenzies())
+      setRollTimes(15)
+      reset(() => {
+        const stopwatchOffset = new Date()
+        stopwatchOffset.setSeconds(stopwatchOffset.getSeconds())
+      }, false)
+    }
   }
 
   const handleRoll = e => {
@@ -145,7 +147,7 @@ function App() {
     }
   }
 
-  // //this is map method 1
+  // //this is method 1
   // const handleHold = id => {
   //   setDiceNum(oldDice =>
   //     oldDice.map(die => {
@@ -157,7 +159,7 @@ function App() {
   //   )
   // }
 
-  // this is map method 2
+  // this is method 2
   const handleHold = id => {
     !isRunning && start()
     setDiceNum(oldDice =>
@@ -167,7 +169,7 @@ function App() {
     )
   }
 
-  // // this is for loop method
+  // // this is method 3 for loop
   // const handleHold = id => {
   //   const anArray = []
   //   for (let i = 0; i < diceNum.length; i++) {
@@ -218,7 +220,9 @@ function App() {
         <span className='playing-inf'>
           Roll times left: <strong>{rollTimes}</strong>
         </span>
-        <button className='btn-stop' onClick={newGame}>Try again</button>
+        <button className='btn-stop' onClick={newGame}>
+          Try again
+        </button>
       </div>
       <div className='game-intro'>
         <h1 className='die-num'>Tenzies Pokemon</h1>
